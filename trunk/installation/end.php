@@ -19,7 +19,7 @@ Thank you for using <b>Starlight Bookmarks</b>!
 <br />
 <br />The installation should be complete now.
 <br /><br />
-<b>Important</b>: PLEASE DELETE THE INSTALLATION FOLDER!
+<strong>Important</strong>: PLEASE DELETE THE INSTALLATION FOLDER!
 
 </body>
 </html>

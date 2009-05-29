@@ -67,8 +67,8 @@ $sql = 'CREATE TABLE '. $table_links .'(
   feed tinytext NOT NULL,
   owner tinytext NOT NULL,
   description longtext NOT NULL,
-  rating int(1) NOT NULL,
-  date_added DATETIME NOT NULL,
+  rating int(2) NOT NULL,
+  date_added DATETIME DEFAULT NULL,
   PRIMARY KEY (id),
 )';
 
