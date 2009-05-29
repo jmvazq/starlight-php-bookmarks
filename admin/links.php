@@ -8,8 +8,8 @@
 ?>
 
 	<div id="about">
-		<p class="head">Links</p>
-		Welcome to the <b>links</b> section of your administration panel.  You can manage your links from here.
+		<h2>Links</h2>
+		<p>Welcome to the <b>links</b> section of your administration panel.  You can manage your links from here.</p>
 	</div>
 <?php
 	$action = $_GET['a'];

@@ -8,15 +8,28 @@
 ?>
 
 	<div id="about">
-		<p class="head">Welcome!</p>
+		<h2>Welcome!</h2>
+		<p>
 		Welcome to the home of the control panel for your <b>Starlight Bookmarks</b> script installation.
+		</p>
 	</div>
 	<div id="statistics">
-		<p class="head">Statistics</p>
+		<h2>Statistics</h2>
+		<p>
 		This web bookmarks directory contains <?php echo links_count(); ?> links in <?php echo categories_count(); ?> categories and sub-categories.<br />
-		The last link was added on <?php date($SBM_SETTINGS['dateformat'], $lastadded); ?>.
+			<p><strong>5 Most recent links:</strong>
+			<ul>
+				<?php
+				//5 most recent links:
+				links('<li>', '</li>', 'date_added DESC', 'all', '_blank', 5);
+				?>
+			</ul>
+			</p>
+		</p>
 	</div>
 	<div id="credits">
-		<p class="head">Credits</p>
+		<h2>Credits</h2>
+		<p>
 		Credits to...
+		</p>
 	</div>

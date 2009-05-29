@@ -33,6 +33,7 @@ if (isset($_POST['add_category'])) {
 <?php
 		}
 	}
+?>
 			<form action="admin.php?p=categories&amp;a=add" method="post">
 				<p><label for="parent">Parent Category:</label><br />
 				<select id="parent" name="parent">
@@ -54,9 +55,9 @@ if (isset($_POST['add_category'])) {
 					<option name="parent" id="<?php echo $id; ?>" value="<?php echo $id; ?>"><?php echo $name; ?> <?php if ($parent != 0) { echo '['. $parentname .']'; } ?> (<?php echo $id; ?>)</option>
 <?php
 	}
+?>
 				</select></p>
 				<p><label for="name">Name:</label><br /><input type="text" maxlength="150" id="name" name="name" /></p>
 				<p><label for="description">Description:</label><br /><textarea rows="5" cols="20" id="description" name="description"></textarea></p>
 				<p><input type="submit" name="add_category" id="add_category" value="Add category" /></p>
 			</form>
-?>

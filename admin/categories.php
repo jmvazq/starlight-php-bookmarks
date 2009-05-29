@@ -8,8 +8,8 @@
 ?>
 
 	<div id="about">
-		<p class="head">Categories</p>
-		Welcome to the <b>categories</b> section of your administration panel.  You can manage your link categories from here.
+		<h2>Categories</h2>
+		<p>Welcome to the <b>categories</b> section of your administration panel.  You can manage your link categories from here.</p>
 	</div>
 <?php
 	$action = $_GET['a'];

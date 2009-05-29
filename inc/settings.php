@@ -21,7 +21,7 @@ $SBM_SETTINGS['sitepath'] = 'home/myusername/public_html/mylinks';
 $SBM_SETTINGS['adminurl'] = $SBM_SETTINGS['siteurl'] . '/sbmadmin';
 
 //Your admin panel's path.  No trailing slash at the end!
-$SBM_SETTINGS['adminpath'] = $SBM_SETTINGS['sitepath'] . 'sbmadmin';
+$SBM_SETTINGS['adminpath'] = $SBM_SETTINGS['sitepath'] . '/sbmadmin';
 
 //Your admin panel's access username.
 $SBM_SETTINGS['username'] = 'sbmadmin';

@@ -43,7 +43,7 @@ if (isset($_COOKIE['SBMadmin'])) {
 		<div id="content">
 			<div id="menu">
 				<p>
-					<a href="?p=home">Home</a> - <a href="?p=links">Links</a> - <a href="?p=categories">Categories</a> - <a href="?p=faq">FAQ</a>
+					<a href="?p=home">Home</a> - <a href="?p=links">Links</a> - <a href="?p=categories">Categories</a> - <a href="?p=help">Help</a>
 				</p>
 			</div>
 			<div id="section">

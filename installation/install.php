@@ -9,6 +9,9 @@
 
 //Include the required files.
 require('../inc/system.php');
+
+$table_categories = $SBM_SETTINGS['table_categories'];
+$table_links = $SBM_SETTINGS['table_links'];
 ?>
 
 <html>
@@ -36,7 +39,7 @@ $sql = 'CREATE TABLE '. $table_categories .'(
   parent int(20) NOT NULL, 
   name tinytext NOT NULL, 
   description longtext NOT NULL,  
-  PRIMARY KEY (id),
+  PRIMARY KEY (id)
 )';
 
 $result = mysql_query($sql) or
@@ -47,14 +50,7 @@ if ($result != false) {
 }
 ?>
 </p>
-<?php
 
-$sql = "INSERT INTO " . $table_categories . " (id, name, description) VALUES ('1','Uncategorized','')";
-$result = mysql_query($sql);
-$result = mysql_query($sql) or
-die("<strong>Error!</strong>  Tried to insert default category, but failed... :( <p>" . $sql . "</p>" . mysql_error());
-
-?>
 <p>Installing database table, <b>Links</b>...
 <br />
 <br />
@@ -68,22 +64,31 @@ $sql = 'CREATE TABLE '. $table_links .'(
   owner tinytext NOT NULL,
   description longtext NOT NULL,
   rating int(2) NOT NULL,
-  date_added DATETIME DEFAULT NULL,
-  PRIMARY KEY (id),
+  date_added DATETIME NOT NULL,
+  PRIMARY KEY (id)
 )';
 
 $result = mysql_query($sql) or
 die('<strong>Error!</strong>  Can\'t create the table \''. $table_links .'\' in the database... :( <p>'. $sql .'</p>'. mysql_error());
 
 if ($result != false) {
-    echo 'Table \''. $table_links .'\' was successfully created!';
+    echo 'Table \''. $SBM_SETTINGS['table_links'] .'\' was successfully created!';
 }
 ?>
 </p>
 <?php
+
+$sql = "INSERT INTO " . $table_categories . " (name, description) VALUES ('Sample Category','This is your sample category.  You may add links to it.')";
+$result = mysql_query($sql) or
+die("<strong>Error!</strong>  Tried to insert sample category, but failed... :( <p><em>" . $sql . "</em></p>" . mysql_error());
+
+$sql = "INSERT INTO " . $table_links . " (category, title, URL, feed, owner, description, rating, date_added) VALUES (0,'Starlight Bookmarks at Google Code', 'http://code.google.com/p/starlight-php-bookmarks', '', 'Jessica M. Vazquez','SBM\'s project site at Google Code, where you can browse the subversion repository for the very latest revision of the source, read the documentation, among other things.', 5, NOW())";
+$result = mysql_query($sql) or
+die("<strong>Error!</strong>  Tried to insert sample link, but failed... :( <p><em>" . $sql . "</em></p>" . mysql_error());
+
 mysql_close();
 ?>
-<a href="end.php">Finish installation...</a>
+<p><a href="end.php">Finish installation...</a></p>
 
 </body>
 </html>
