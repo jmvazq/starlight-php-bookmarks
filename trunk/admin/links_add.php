@@ -16,7 +16,7 @@ if (isset($_POST['add_link'])) {
 			$owner = CleanData($_POST['owner']);
 			$description = CleanData($_POST['description']);
 			$rating = CleanData($_POST['rating']);
-			$sql = 'INSERT INTO '. $SBM_SETTINGS['table_links'] .' (category, title, URL, feed, owner, description, rating) VALUES (\''. $category .'\',\''. $title .'\',\''. $url .'\',\''.$feed .'\',\''. $owner .'\',\''. $description .'\',\''. $rating .'\')';
+			$sql = 'INSERT INTO '. $SBM_SETTINGS['table_links'] .' (category, title, URL, feed, owner, description, rating, date_added) VALUES (\''. $category .'\',\''. $title .'\',\''. $url .'\',\''.$feed .'\',\''. $owner .'\',\''. $description .'\',\''. $rating .'\', NOW())';
 			$result = mysql_query($sql);
 			if ($result) {
 ?>

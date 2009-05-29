@@ -35,17 +35,17 @@ function sbm_pagination() {
 function admin_section($section) {
 	GLOBAL $SBM_SETTINGS;
 	$adminpath = $SBM_SETTINGS['adminpath'];
-	if ($section == 'faq') {
-		require_once($adminpath .'admin/help.php');
+	if ($section == 'help') {
+		require_once($adminpath .'/admin/help.php');
 	}
 	elseif ($section == 'links') {
-		require_once($adminpath .'admin/links.php');
+		require_once($adminpath .'/admin/links.php');
 	}
 	elseif ($section == 'categories') {
-		require_once($adminpath .'admin/categories.php');
+		require_once($adminpath .'/admin/categories.php');
 	}
 	else {
-		require_once($adminpath .'admin/main.php');
+		require_once($adminpath .'/admin/main.php');
 	}
 } //END of ADMIN SECTION function.
 
@@ -153,7 +153,7 @@ function links($beforelink = null, $afterlink = null, $order = null, $display = 
 	if ($beforelink == '' AND $afterlink == '') {
 		$afterlink = '<br />';
 	}
-	if ($order != 'title' AND $order != 'id' AND $order != 'category' AND $order != 'date ASC' AND $order != 'date DESC' OR !isset($order)) {
+	if ($order != 'title' AND $order != 'id' AND $order != 'category' AND $order != 'date_added ASC' AND $order != 'date_added DESC' OR !isset($order)) {
 		$order = 'title';
 	}
 	if ($limit == '' OR !is_numeric($limit)) { 
@@ -179,7 +179,7 @@ function links($beforelink = null, $afterlink = null, $order = null, $display = 
 		$owner = $row['owner'];
 		$description = $row['description'];
 		if($row['rating'] == 0) { $rating = 'N/A'; } else { $rating = $row['rating']; }
-		$date = $row['date'];
+		$date = $row['date_added'];
 		if ($order == 'category') {
 			$catsql = 'SELECT name FROM '. $SBM_SETTINGS['table_categories'] .' WHERE id='. $category .' LIMIT 1';
 			$catresult = mysql_query($catsql);
@@ -220,7 +220,7 @@ function get_link($id) {
 			$link_owner = $row['owner'];
 			$link_description = $row['description'];
 			if($row['rating'] == 0) { $link_rating = 'N/A'; } else { $link_rating = $row['rating']; }
-			$link_date = $row['date'];
+			$link_date = $row['date_added'];
 		}
 	}
 }
@@ -266,7 +266,7 @@ function links_random($category = null) {
 			$link_owner = $row['owner'];
 			$link_description = $row['description'];
 			if($row['rating'] == 0) { $link_rating = 'N/A'; } else { $link_rating = $row['rating']; }
-			$link_date = $row['date'];
+			$link_date = $row['date_added'];
 		}
 	} else {
 		$sql = 'SELECT * FROM '. $SBM_SETTINGS['table_links'] .' ORDER BY RAND() LIMIT 1';
@@ -282,7 +282,7 @@ function links_random($category = null) {
 			if($row['rating'] == 0) {
 				$link_rating = 'N/A'; } else { $link_rating = $row['rating'];
 			}
-			$link_date = $row['date'];
+			$link_date = $row['date_added'];
 		}
 	}
 }
