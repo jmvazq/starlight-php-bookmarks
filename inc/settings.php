@@ -12,10 +12,10 @@
 $SBM_SETTINGS['sitename'] = 'My Web Bookmarks';
 
 //The root address of your installation. No trailing slash at the end!
-$SBM_SETTINGS['siteurl'] = 'http://arwym.com/links';
+$SBM_SETTINGS['siteurl'] = 'http://mywebsite.com/mylinks';
 
 //Your website's path to the root directory of your installation.  No trailing slash at the end!
-$SBM_SETTINGS['sitepath'] = 'home/projectf/public_html/links';
+$SBM_SETTINGS['sitepath'] = 'home/myusername/public_html/mylinks';
 
 //Your admin panel's root address.  No trailing slash at the end!
 $SBM_SETTINGS['adminurl'] = $SBM_SETTINGS['siteurl'] . '/sbmadmin';
@@ -27,10 +27,10 @@ $SBM_SETTINGS['adminpath'] = $SBM_SETTINGS['sitepath'] . 'sbmadmin';
 $SBM_SETTINGS['username'] = 'sbmadmin';
 
 //Your admin panel's access password.
-$SBM_SETTINGS['password'] = 'ilurvlinks';
+$SBM_SETTINGS['password'] = 'sbmadminlovelinks';
 
-//The random string that will be combined with your password in order to make it much harder for strangers to guess it
-//and access your admin panel.  Make sure that it is very, very random.
+//The random string (also known as SALT) that will be combined with your password during the 'hashing' process in order to make it much harder for strangers to
+//access your admin panel.  Make sure that it is very, very random.
 $SBM_SETTINGS['randomstring'] = '6lollgdhhilovelinksduhwhyelseamiwritingthisscriptanyway4';
 
 
@@ -51,13 +51,13 @@ $SBM_SETTINGS['defaultcat'] = '1';
 $SBM_SETTINGS['db_host'] = 'localhost';
 
 //Your database's name.
-$SBM_SETTINGS['db_database'] = 'projectf_links';
+$SBM_SETTINGS['db_database'] = 'sbm_install';
 
 //Your database's username.
-$SBM_SETTINGS['db_user'] = 'projectf_links';
+$SBM_SETTINGS['db_user'] = 'sbm_user';
 
 //Your database's password.
-$SBM_SETTINGS['db_password'] = '1gatito01';
+$SBM_SETTINGS['db_password'] = 'dbuserpassword';
 
 
 //DATA TABLE NAMES

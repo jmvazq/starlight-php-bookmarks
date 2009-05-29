@@ -6,6 +6,11 @@
 //  You can re-distribute this code under the terms of the GNU license.
 *//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////  NOTES ABOUT THIS DOCUMENT
+/*
+I'm planning to separate functions in individual files, or restrict the system.php include to user functions only, keeping administrative ones somewhere else, so that they cannot be used in the user's 'front' by default.
+*/
+
 require_once('settings.php');
 
 //MAIN FUNCTIONS
@@ -31,16 +36,16 @@ function admin_section($section) {
 	GLOBAL $SBM_SETTINGS;
 	$adminpath = $SBM_SETTINGS['adminpath'];
 	if ($section == 'faq') {
-		require_once($adminpath .'pages/faq.php');
+		require_once($adminpath .'admin/help.php');
 	}
 	elseif ($section == 'links') {
-		require_once($adminpath .'pages/links.php');
+		require_once($adminpath .'admin/links.php');
 	}
 	elseif ($section == 'categories') {
-		require_once($adminpath .'pages/categories.php');
+		require_once($adminpath .'admin/categories.php');
 	}
 	else {
-		require_once($adminpath .'pages/main.php');
+		require_once($adminpath .'admin/main.php');
 	}
 } //END of ADMIN SECTION function.
 
@@ -62,6 +67,8 @@ function CleanData($data) {
 /* The following functions are the heart of this script, so to say.  Without them, the users wouldn't be able to easily read and display their bookmarks in their websites.
 So, in other words, these functions are meant to handle the link and category data stored in the user's database.  'Nuff said. */
 
+
+// CATEGORIES() - Select a group of categories from the database.
 function categories($beforecat, $aftercat, $order, $display, $linked) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
@@ -117,6 +124,8 @@ function categories($beforecat, $aftercat, $order, $display, $linked) {
 	mysql_close();
 } //END of function.
 
+
+// GET_CATEGORY() - Get a chosen category's information.
 function get_category($id) {
 	GLOBAL $SBM_SETTINGS;
 	if ($id) {
@@ -136,6 +145,8 @@ function get_category($id) {
 	}
 } //END of function.
 
+
+// LINKS() - Select a group of links from the database.
 function links($beforelink = null, $afterlink = null, $order = null, $display = null, $target = null, $limit = null) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
@@ -183,6 +194,8 @@ function links($beforelink = null, $afterlink = null, $order = null, $display = 
 	mysql_close();
 }
 
+
+//GET_LINK() - Get a selected link's information.
 function get_link($id) {
 	GLOBAL $SBM_SETTINGS;
 	if ($id) {
@@ -213,7 +226,7 @@ function get_link($id) {
 }
 
 
-//MUST REWRITE
+// MUST REWRITE - LINKS_COUNT() - Count links in your database.
 function links_count($category = null) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
@@ -228,6 +241,7 @@ function links_count($category = null) {
 }
 
 
+// LINKS_RANDOM() - Select a random link from the database.
 function links_random($category = null) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
@@ -274,7 +288,7 @@ function links_random($category = null) {
 }
 
 
-//MUST REWRITE - CATEGORIES_COUNT()
+// MUST REWRITE - CATEGORIES_COUNT() - Count categories in the database.
 function categories_count($parent = null) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
@@ -289,6 +303,7 @@ function categories_count($parent = null) {
 }
 
 
+// CATEGORIES_RANDOM() - Select a random category from the database.
 function categories_random($parent = null) {
 	GLOBAL $SBM_SETTINGS;
 	sbm_connect();
