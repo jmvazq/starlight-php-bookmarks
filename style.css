@@ -1,0 +1,118 @@
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Starlight Bookmarks - Version 1.0 Beta
+//  Copyright 2007, 2008, 2009 Jessica M. Vázquez  at http://www.arwym.com, unless otherwise stated.
+//  This is linkware software.  You are required to leave a link to http://www.arwym.com/scripts, along with the software's name and version, in the footer. 
+//  You can re-distribute this code under the terms of the GNU license.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+body { background: #6489BB; color: #ffffff; }
+
+.center { margin: 0px auto 0px auto; }
+
+a:link {
+	color: #5D80AE;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #5D80AE;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #5D80AE;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #5D80AE;
+	text-decoration: none;
+}
+
+a.img {
+	border: none;
+}
+
+.theading {
+background: #ffffff;
+border: 1px solid #98BEF7;
+color: #455F81;
+font-size: 12px;
+font-weight: bold;
+padding: 5px;
+}
+
+table {
+background: #98BEF7;
+border: 1px solid #98BEF7;
+width: 700px;
+margin-top: 10px;
+margin-right: auto;
+margin-bottom: 10px;
+margin-left: auto;
+}
+
+tr {
+width: 100%;
+}
+
+td, tr {
+background: #ffffff;
+border: 0px solid #98BEF7;
+color: #455F81;
+padding: 5px;
+}
+
+#wrapper { background: #ffffff; color: #455F81; width: 70%; margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; }
+
+#header { border-bottom: 3px solid #6489BB; font-family: verdana, arial; padding: 30px 10px 10px 10px;
+	min-height: 40px;
+	max-height: 150px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;}
+
+#content { line-height: 135%; 
+	font-family: verdana, arial;
+	font-size: 12px;
+	margin: 10px 10px 10px 10px; }
+
+.head { background: #98BEF7; color: #ffffff; font-weight: bold; text-align: center; padding: 3px; }
+
+.addcat, .addlink { font-size: 14px; font-weight: bold; }
+
+#menu { font-size: 14px; font-weight: bold; text-transform: lowercase; margin: auto; text-align: center; }
+
+#about { text-align: center; }
+
+#statistics { text-align: center; }
+
+#credits { text-align: center; }
+
+#footer { border-top: 3px solid #6489BB; font-family: verdana, arial;
+	font-size: 10px; text-align: center; padding: 10px 10px 0px 10px;
+	min-height: 25px;
+	max-height: 40px;}
+	
+	
+/*	Form Styling - all messed up...	*/
+
+label {
+	font-weight: bold;
+	}
+
+input, select {
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+	width: 200px;
+	}
+	
+textarea {
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+	width: 200px;
+	}
+	
+input[type=checkbox] {
+width: 50px;
+}
