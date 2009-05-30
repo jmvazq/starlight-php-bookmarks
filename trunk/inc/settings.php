@@ -15,7 +15,7 @@ $SBM_SETTINGS['sitename'] = 'My Web Bookmarks';
 $SBM_SETTINGS['siteurl'] = 'http://mywebsite.com/mylinks';
 
 //Your website's path to the root directory of your installation.  No trailing slash at the end!
-$SBM_SETTINGS['sitepath'] = 'home/myusername/public_html/mylinks';
+$SBM_SETTINGS['sitepath'] = '/home/myusername/public_html/mylinks';
 
 //Your admin panel's root address.  No trailing slash at the end!
 $SBM_SETTINGS['adminurl'] = $SBM_SETTINGS['siteurl'] . '/sbmadmin';
@@ -41,7 +41,7 @@ $SBM_SETTINGS['dateformat'] = 'm/d/y';
 
 //Specify the default category by its ID.  Default value is '1'.
 //Every time a category is deleted, all its links will be automatically moved to the default category.
-//And if no category is specified during link creation, then it'll be automatically sorted under the default one.
+//(Not working yet:  And if no category is specified during link creation, then it'll be automatically sorted under the default one.)
 $SBM_SETTINGS['defaultcat'] = '1';
 
 
