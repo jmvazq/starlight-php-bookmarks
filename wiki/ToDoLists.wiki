@@ -12,6 +12,6 @@ Although the script IS functional already, there are still many things I'm not s
   * Add *filtering/sorting/search functionality* to the category and link lists at the admin panel, allowing the user to *browse the links (and categories) by specific criteria*, such as a certain category.
   * Attempt to implement *RSS/atom feeds* for the links.
   * Attempt to create a feature that allows to *EXPORT* the links in *CSV* (comma separated value) format, *XML* and/or similar.  (If I manage to do this, I'd also like to include an *IMPORT* feature as well, in order to include bookmarks from some browsers and online bookmarking services.)
-  * Add *more flexibility* to user functions *get_category()* and *get_link()*.
+  * *CURRENT TASK*: Add *more flexibility* to user functions *get_category()* and *get_link()*.
   * ~~*Rewrite* user functions *links_count()* and *categories_count()*.~~
   * *More* to come.
